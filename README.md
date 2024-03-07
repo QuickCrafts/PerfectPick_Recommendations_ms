@@ -7,7 +7,7 @@ Generation and management recommendations based on past user likes.
 
 #### Get Recommendation
 
-Return last recomendation not used with arrays of movies, songs and books that user may like with complete JSONs information of each one.
+Return last recomendation not used with arrays of movies, songs and books that user may like with  Id JSONss information of each one.
 
 ```http
   GET /recommendation/${id}
@@ -19,7 +19,7 @@ Return last recomendation not used with arrays of movies, songs and books that u
 
 | Response Status | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `200` | `success` | Returns complete information about possible recommendations|
+| `200` | `success` | Returns information about possible recommendations|
 | `404` | `error` | "User not found"|
 | `400` | `error` | "Id not provided" |
 | `500` | `error` | Any other error message|
@@ -28,9 +28,9 @@ Return last recomendation not used with arrays of movies, songs and books that u
 // Response interface
 {
     id: string // User id
-    movies: Movie[] //Complete movie info of each one
-    books: Book[] //Complete book info of each one
-    songs: Song[] //Complete song info of each one
+    movies: string[] // Id movies
+    books: string[] // Id books
+    songs: string[] // Id songs
 }
 ```
 
