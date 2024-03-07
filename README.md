@@ -26,11 +26,11 @@ Return last recomendation not used with arrays of movies, songs and books that u
 
 ```typescript
 // Response interface
-{
-    id: string // User id
-    movies: string[] // Id movies
-    books: string[] // Id books
-    songs: string[] // Id songs
+interface Recommendation_MS{
+  id: string // User id
+  movies: string[] // Id movies
+  books: string[] // Id books
+  songs: string[] // Id songs
 }
 ```
 
