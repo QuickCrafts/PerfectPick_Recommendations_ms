@@ -53,7 +53,7 @@ Create a new recomendation to use later even if exits one not used yet.
 | `400` | `error` | "Id not provided" |
 | `500` | `error` | Any other error message|
 
-#### Update recomendation use
+#### Update recommendation use
 
 Change to used the last user recommendation.
 
@@ -72,6 +72,14 @@ Change to used the last user recommendation.
 | `400` | `error` | "Id not provided" |
 | `500` | `error` | Any other error message|
 
+#### Generate recommendation trigger
+
+Regular model training to better recommendations. When the last recommendation is updated to used this function is triggered to review model, generate and save a new recommendation.
+
+```typescript
+// Trigger
+generateRecommend(userId);
+```
 
 ## Deployment
 
