@@ -3,11 +3,14 @@
 
 Generation and management recommendations based on past user likes.
 
+---
+<br />
+
 ## API Reference
 
 #### Get Recommendation
 
-Return last recomendation not used with arrays of movies, songs and books that user may like with  Id JSONss information of each one.
+Return last recommendation not used with arrays of movies, songs and books that user may like.
 
 ```http
   GET /recommendation/${id}
@@ -15,7 +18,7 @@ Return last recomendation not used with arrays of movies, songs and books that u
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. User id |
+| `id` | `int` | **Required**. User id |
 
 | Response Status | Type     | Description                |
 | :-------- | :------- | :------------------------- |
@@ -26,8 +29,8 @@ Return last recomendation not used with arrays of movies, songs and books that u
 
 ```typescript
 // Response interface
-interface Recommendation_MS{
-  id: string // User id
+interface Response_recommendation_MS{
+  id: number // User id
   movies: string[] // Id movies
   books: string[] // Id books
   songs: string[] // Id songs
@@ -36,15 +39,37 @@ interface Recommendation_MS{
 
 #### Generate New Recommendation
 
-Create a new recomendation to use later even if exits one not used yet.
+Create a new recommendation to use later even if exits one not used yet.
 
 ```http
   POST /recommendation/${id}
 ```
 
+```typescript
+interface Get_Catalog{
+  movies: Movie[] // Movie all info document[]
+  books: Book[] // Book all info document[]
+  songs: Song[] // Song all info document[]
+}
+
+interface Get_Likes{
+  id: number // User id
+  movies: Record<number, number>[] // {movie id, user rating}[]
+  books: Record<number, number>[] // {book id, user rating}[]
+  songs: Record<number, number>[] // {song id, user rating}[]
+}
+
+// Body interface
+interface New_Recommendation{
+  id: number //User id
+  likes: GetLikes //User info likes
+  catalog: Get_Catalog // Complete catalog
+}
+```
+
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. User id |
+| `id` | `int` | **Required**. User id |
 
 | Response Status | Type     | Description                |
 | :-------- | :------- | :------------------------- |
@@ -55,31 +80,50 @@ Create a new recomendation to use later even if exits one not used yet.
 
 #### Update recommendation use
 
-Change to used the last user recommendation.
+Change to used the last user recommendation and review model, generate and save a new recommendation to use. (Regular model training for better recommendations).
 
 ```http
   PUT /recommendation/${id}
 ```
 
+```typescript
+interface Get_Catalog{
+  movies: Movie[] // Movie all info document[]
+  books: Book[] // Book all info document[]
+  songs: Song[] // Song all info document[]
+}
+
+interface Get_Likes{
+  id: number // User id
+  movies: Record<number, number>[] // {movie id, user rating}[]
+  books: Record<number, number>[] // {book id, user rating}[]
+  songs: Record<number, number>[] // {song id, user rating}[]
+}
+
+// Body interface
+interface New_Recommendation{
+  id: number //User id
+  likes: GetLikes //User info likes
+  catalog: Get_Catalog // Complete catalog
+}
+```
+
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. User id |
+| `id` | `int` | **Required**. User id |
 
 | Response Status | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `201` | `success` | "Recommendation updated to used"|
+| `201` | `success` | "Recommendation updated and regenerated"|
 | `404` | `error` | "Recommendation not found"|
 | `400` | `error` | "Id not provided" |
 | `500` | `error` | Any other error message|
 
-#### Generate recommendation trigger
 
-Regular model training to better recommendations. When the last recommendation is updated to used this function is triggered to review model, generate and save a new recommendation.
-
-```typescript
-// Trigger
-generateRecommend(userId);
-```
+---
+<br />
+<br />
+<br />
 
 ## Deployment
 
