@@ -100,11 +100,25 @@ interface Get_Likes{
   songs: Record<number, number>[] // {song id, user rating}[]
 }
 
+interface Get_User{
+  id: string // User id
+  firstname: string
+  lastname: string // User last name
+  avatar_url?: string // Url of avatar image
+  birthdate?: string // String with the timestamp
+  gender?: 'M' | 'F' | 'O' | 'P' // User gender coded
+  country?: Country // Country information
+  created_time: string // String with the timestamp
+  email: string
+  verified: boolean
+  setup: boolean
+}
+
 // Body interface
 interface New_Recommendation{
-  id: number //User id
   likes: GetLikes //User info likes
   catalog: Get_Catalog // Complete catalog
+  user: Get_User
 }
 ```
 
