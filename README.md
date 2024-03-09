@@ -93,11 +93,20 @@ interface Get_Catalog{
   songs: Song[] // Song all info document[]
 }
 
+interface Like_Relation{
+  id: string
+  user_id: string
+  type: 'MOV' | 'BOO' | 'SON'
+  rating?: float // given by the user searched
+  like_type: 'LK' | 'DLK' | 'BLK' // Liked | Disliked | Blank (no info yet)
+  wishlist: boolean // Inside user wishlist? Yes or No
+}
+
 interface Get_Likes{
   id: number // User id
-  movies: Record<number, number>[] // {movie id, user rating}[]
-  books: Record<number, number>[] // {book id, user rating}[]
-  songs: Record<number, number>[] // {song id, user rating}[]
+  movies: Like_Relation[]
+  books: Like_Relation[]
+  songs: Like_Relation[]
 }
 
 interface Get_User{
