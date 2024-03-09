@@ -169,23 +169,23 @@ Clone the project
 [//]: <> (@todo correct all)
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/QuickCrafts/PerfectPick_Recommendations_ms.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd PerfectPick_Recommendations_ms
 ```
 
 Install dependencies
 
 ```bash
-  npm install
+  pip install requirements.txt
 ```
 
 Start the server
 
 ```bash
-  npm 
+  uvicorn main:app --reload 
 ```
