@@ -8,6 +8,8 @@ Generation and management recommendations based on past user likes.
 
 ## API Reference
 
+### Recommends Delivery
+
 #### Get Recommendation
 
 Return last recommendation not used with arrays of movies, songs and books that user may like.
@@ -36,6 +38,8 @@ interface Response_recommendation_MS{
   songs: string[] // Id songs
 }
 ```
+
+### Models Training
 
 #### Generate New Recommendation
 
@@ -184,4 +188,4 @@ Start the server
 
 ```bash
   npm 
-
+```
