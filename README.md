@@ -148,15 +148,6 @@ interface New_Recommendation{
 <br />
 <br />
 
-## Deployment
-
-To deploy this project run
-
-[//]: <> (@todo correct)
-
-```bash
-  npm run deploy
-```
 
 ## Run Locally
 
@@ -177,11 +168,11 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  npm install
+  pip install requirements.txt
 ```
 
 Start the server
 
 ```bash
-  npm 
+  uvicorn main:app --reload 
 
