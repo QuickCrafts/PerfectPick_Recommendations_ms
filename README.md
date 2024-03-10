@@ -113,6 +113,13 @@ interface Get_Likes{
   songs: Like_Relation[]
 }
 
+interface Country{
+  id: number
+  name: string // English name
+  code_2: string //ISO 3166-1 alpha-2
+  code_3: string //ISO 3166-1 alpha-3
+}
+
 interface Get_User{
   id: string // User id
   firstname: string
