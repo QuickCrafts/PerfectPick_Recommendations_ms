@@ -41,6 +41,7 @@ async def delete_recommendation(id_user: int):
         "data": "recommendation deleted successfully"
     }
 
+# PUT Request Method to remove an item from a user's recommendation, to be used after a user likes an item from the recommendation list
 @router.put("/recommendation/remove/{id_user}")
 async def remove_item_from_recommendation(id_user: int, removal_info: ItemRemovalModel):
     if removal_info.section not in ["movies", "books", "songs"]:
