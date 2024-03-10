@@ -3,8 +3,8 @@ from typing import List, Optional
 
 class RecommendationModel(BaseModel):
     id_user: int
-    movies: List[int]  # Changed from List[str] to List[int]
-    books: List[int]  # Assuming books and songs also use integer IDs
+    movies: List[int]  
+    books: List[int]  
     songs: List[int]
     created_at: str
 
