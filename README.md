@@ -98,8 +98,8 @@ interface Get_Catalog{
 }
 
 interface Like_Relation{
-  id: string
-  user_id: string
+  id: number
+  user_id: number
   type: 'MOV' | 'BOO' | 'SON'
   rating?: float // given by the user searched
   like_type: 'LK' | 'DLK' | 'BLK' // Liked | Disliked | Blank (no info yet)
@@ -121,7 +121,7 @@ interface Country{
 }
 
 interface Get_User{
-  id: string // User id
+  id: number // User id
   firstname: string
   lastname: string // User last name
   avatar_url?: string // Url of avatar image
