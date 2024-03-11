@@ -1,0 +1,19 @@
+to create virtual environemnt
+python3 -m venv env
+
+to start working within the environment.
+env\Scripts\activate
+
+pip install fastapi
+python -m pip install pymongo==3.12.2
+pip install python-dotenv
+
+# run the app
+uvicorn main:app --reload
+
+
+to send dependency list to requirements.txt
+pip freeze > requirements.txt
+
+# to install dependency list
+pip install -r requirements.txt 
