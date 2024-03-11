@@ -166,7 +166,11 @@ To deploy this project run
 [//]: <> (@todo correct)
 
 ```bash
-  npm run deploy
+  docker pull mongo
+  docker build -t fastapi-app . 
+  docker network create mynetwork
+  docker run -d --name myfastapi --network mynetwork -p 80:80 fastapi-app 
+  docker run -d --name mymongo --network mynetwork -v mongodbdata:/data/db mongo
 ```
 
 ## Run Locally
