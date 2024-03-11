@@ -33,7 +33,7 @@ async def update_recommendation_for_user(id_user: int, recommendation: Recommend
     return {"data": "Recommendation updated successfully"}
 
 
-# DELETE Request Method
+# DELETE Request Method to delete all the recommendatios for a specific user
 @router.delete("/recommendation/{id_user}")
 async def delete_recommendation(id_user: int):
     collection_name.delete_one({"id_user": id_user})
