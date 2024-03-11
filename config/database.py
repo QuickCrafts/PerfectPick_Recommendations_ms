@@ -12,8 +12,19 @@ DB_NAME = os.getenv("DB_NAME")
 client = MongoClient(f"mongodb+srv://{DB_USER}:{DB_PASS}@perfectpick-recommendat.eic4adp.mongodb.net/?retryWrites=true&w=majority&appName=PerfectPick-Recommendations-MS")
 '''
 
+'''
 # local client
 client = MongoClient('localhost', 27017)
+'''
+
+# local client IP
+'''
+client = MongoClient('192.168.1.10', 27017)
+'''
+
+# local client for Docker
+client = MongoClient('mymongo', 27017)
+
 
 db = client[DB_NAME]
 
