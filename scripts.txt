@@ -1,7 +1,7 @@
-to create virtual environemnt
+#to create virtual environemnt
 python3 -m venv env
 
-to start working within the environment.
+#to start working within the environment.
 env\Scripts\activate
 
 pip install fastapi
@@ -12,21 +12,25 @@ pip install python-dotenv
 uvicorn main:app --reload
 
 
-to send dependency list to requirements.txt
+#to send dependency list to requirements.txt
 pip freeze > requirements.txt
 
 # to install dependency list
 pip install -r requirements.txt 
 
 
-pull latest mongo version for docker
+#pull latest mongo version for docker
 docker pull mongo
 
-build app on docker image
+#build app on docker image
 docker build -t fastapi-app . 
 
-run app on docker container on mynetwork
+#crear docker network
+docker network create mynetwork
+
+
+#run app on docker container on mynetwork
 docker run -d --name myfastapi --network mynetwork -p 80:80 fastapi-app 
 
-run mongodb on mynetwork, create volume for data persistance
+#run mongodb on mynetwork, create volume for data persistance
 docker run -d --name mymongo --network mynetwork -v mongodbdata:/data/db mongo
