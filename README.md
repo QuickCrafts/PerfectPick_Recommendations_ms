@@ -8,156 +8,105 @@ Generation and management recommendations based on past user likes.
 
 ## API Reference
 
-### Recommends Delivery
+## GET /recommendation/{id_user}
 
-#### Get Recommendation
+This endpoint retrieves the recommendations for a specific user.
 
-Return last recommendation not used with arrays of movies, songs and books that user may like.
+### Parameters
 
-```http
-  GET /recommendation/${id}
+- `id_user` (path, required): an integer that represents the user's ID.
+
+### Responses
+
+- `200 OK`: Returns a list of recommendations for the specified user.
+- `404 Not Found`: If no recommendations are found for the specified user.
+
+### Example
+
+```bash
+curl -X GET "http://localhost:8000/recommendation/1"
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `int` | **Required**. User id |
+## POST /recommendation/
 
-| Response Status | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `200` | `success` | Returns information about possible recommendations|
-| `404` | `error` | "User not found"|
-| `400` | `error` | "Id not provided" |
-| `500` | `error` | Any other error message|
+This endpoint creates a new recommendation.
 
-```typescript
-// Response interface
-interface Response_recommendation_MS{
-  id: number // User id
-  movies: string[] // Id movies
-  books: string[] // Id books
-  songs: string[] // Id songs
-}
+### Request Body
+
+- `recommendation` (required): A JSON object that represents the recommendation. The structure of this object should follow the `RecommendationModel`.
+
+### Responses
+
+- `200 OK`: Returns a success message if the recommendation was added successfully.
+
+### Example
+
+```bash
+curl -X POST "http://localhost:8000/recommendation/" -H "Content-Type: application/json" -d '{"key1":"value1", "key2":"value2"}'
+```
+## PUT /recommendation/{id_user}
+
+This endpoint updates a recommendation for a specific user.
+
+### Parameters
+
+- `id_user` (path, required): an integer that represents the user's ID.
+
+### Request Body
+
+- `recommendation` (required): A JSON object that represents the updated recommendation. The structure of this object should follow the `RecommendationUpdateModel`.
+
+### Responses
+
+- `200 OK`: Returns a success message if the recommendation was updated successfully.
+
+### Example
+
+```bash
+curl -X PUT "http://localhost:8000/recommendation/1" -H "Content-Type: application/json" -d '{"key1":"value1", "key2":"value2"}'
 ```
 
-### Models Training
+## DELETE /recommendation/{id_user}
 
-#### Generate New Recommendation
+This endpoint deletes all the recommendations for a specific user.
 
-Create a new recommendation to use later even if exits one not used yet.
+### Parameters
 
-```http
-  POST /recommendation/${id}
+- `id_user` (path, required): an integer that represents the user's ID.
+
+### Responses
+
+- `200 OK`: Returns a success message if the recommendations were deleted successfully. The response body will contain a JSON object with a `data` field containing the message "recommendation deleted successfully".
+
+### Example
+
+```bash
+curl -X DELETE "http://localhost:8000/recommendation/1"
 ```
 
-```typescript
-interface Get_Catalog{
-  movies: Movie[] // Movie all info document[]
-  books: Book[] // Book all info document[]
-  songs: Song[] // Song all info document[]
-}
+## PUT /recommendation/remove/{id_user}
 
-interface Get_Likes{
-  id: number // User id
-  movies: Record<number, number>[] // {movie id, user rating}[]
-  books: Record<number, number>[] // {book id, user rating}[]
-  songs: Record<number, number>[] // {song id, user rating}[]
-}
+This endpoint removes an item from a user's recommendation.
 
-// Body interface
-interface New_Recommendation{
-  id: number //User id
-  likes: GetLikes //User info likes
-  catalog: Get_Catalog // Complete catalog
-}
+### Parameters
+
+- `id_user` (path, required): an integer that represents the user's ID.
+
+### Request Body
+
+- `removal_info` (required): A JSON object that represents the item to be removed. The structure of this object should follow the `ItemRemovalModel`.
+
+### Responses
+
+- `200 OK`: Returns a success message if the item was removed successfully. The response body will contain a JSON object with a `message` field containing the message "Item removed successfully".
+- `400 Bad Request`: If an invalid section is specified.
+- `404 Not Found`: If the user is not found or the item is not in the list.
+
+### Example
+
+```bash
+curl -X PUT "http://localhost:8000/recommendation/remove/1" -H "Content-Type: application/json" -d '{"section":"movies", "id_to_remove":"123"}'
 ```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `int` | **Required**. User id |
-
-| Response Status | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `201` | `success` | "Recommendation generated"|
-| `404` | `error` | "User not found"|
-| `400` | `error` | "Id not provided" |
-| `500` | `error` | Any other error message|
-
-#### Update recommendation use
-
-Change to used the last user recommendation and review model, generate and save a new recommendation to use. (Regular model training for better recommendations).
-
-```http
-  PUT /recommendation/${id}
-```
-
-```typescript
-interface Get_Catalog{
-  movies: Movie[] // Movie all info document[]
-  books: Book[] // Book all info document[]
-  songs: Song[] // Song all info document[]
-}
-
-interface Like_Relation{
-  id: number
-  user_id: number
-  type: 'MOV' | 'BOO' | 'SON'
-  rating?: float // given by the user searched
-  like_type: 'LK' | 'DLK' | 'BLK' // Liked | Disliked | Blank (no info yet)
-  wishlist: boolean // Inside user wishlist? Yes or No
-}
-
-interface Get_Likes{
-  id: number // User id
-  movies: Like_Relation[]
-  books: Like_Relation[]
-  songs: Like_Relation[]
-}
-
-interface Country{
-  id: number
-  name: string // English name
-  code_2: string //ISO 3166-1 alpha-2
-  code_3: string //ISO 3166-1 alpha-3
-}
-
-interface Get_User{
-  id: number // User id
-  firstname: string
-  lastname: string // User last name
-  avatar_url?: string // Url of avatar image
-  birthdate?: string // String with the timestamp
-  gender?: 'M' | 'F' | 'O' | 'P' // User gender coded
-  country?: Country // Country information
-  created_time: string // String with the timestamp
-  email: string
-  verified: boolean
-  setup: boolean
-}
-
-// Body interface
-interface New_Recommendation{
-  likes: GetLikes //User info likes
-  catalog: Get_Catalog // Complete catalog
-  user: Get_User
-}
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `int` | **Required**. User id |
-
-| Response Status | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `201` | `success` | "Recommendation updated and regenerated"|
-| `404` | `error` | "Recommendation not found"|
-| `400` | `error` | "Id not provided" |
-| `500` | `error` | Any other error message|
-
-
----
-<br />
-<br />
-<br />
 
 ## Deployment
 
@@ -166,8 +115,14 @@ To deploy this project run
 [//]: <> (@todo correct)
 
 ```bash
-  npm run deploy
+  docker pull mongo
+  docker build -t fastapi-app . 
+  docker network create mynetwork
+  docker run -d --name myfastapi --network mynetwork -p 80:80 fastapi-app 
+  docker run -d --name mymongo --network mynetwork -v mongodbdata:/data/db mongo
 ```
+
+
 
 ## Run Locally
 
