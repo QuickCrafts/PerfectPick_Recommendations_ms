@@ -12,7 +12,7 @@ Generation and management recommendations based on past user likes.
 
 #### Get Recommendation
 
-Return last recommendation not used with arrays of movies, songs and books that user may like.
+Returns all the recommendations generated for the user
 
 ```http
   GET /recommendation/${id}
@@ -31,8 +31,8 @@ Return last recommendation not used with arrays of movies, songs and books that 
 
 ```typescript
 // Response interface
-interface Response_recommendation_MS{
-  id: number // User id
+model RecommendationModel{
+  id_user: number // User id
   movies: string[] // Id movies
   books: string[] // Id books
   songs: string[] // Id songs
