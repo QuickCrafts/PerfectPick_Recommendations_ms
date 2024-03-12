@@ -8,52 +8,40 @@ Generation and management recommendations based on past user likes.
 
 ## API Reference
 
-### Recommends Delivery
+## GET /recommendation/{id_user}
 
-#### Get Recommendation
+This endpoint retrieves the recommendations for a specific user.
 
-Returns all the recommendations generated for the user
+### Parameters
 
-```http
-  GET /recommendation/${id}
-```
+- `id_user` (path, required): an integer that represents the user's ID.
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `int` | **Required**. User id |
+### Responses
 
-| Response Status | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `200` | `success` | Returns information about possible recommendations|
-| `404` | `error` | "User not found"|
-| `400` | `error` | "Id not provided" |
-| `500` | `error` | Any other error message|
+- `200 OK`: Returns a list of recommendations for the specified user.
+- `404 Not Found`: If no recommendations are found for the specified user.
 
-```typescript
-// Response interface
-model RecommendationModel{
-  id_user: number // User id
-  movies: string[] // Id movies
-  books: string[] // Id books
-  songs: string[] // Id songs
-}
-```
+### Example
 
-### Models Training
+```bash
+curl -X GET "http://localhost:8000/recommendation/1"
 
-#### Generate New Recommendation
 
-Create a new recommendation to use later even if exits one not used yet.
+
+#### Create New Recommendation
+
+Save the recommendation document for the user on the database
 
 ```http
   POST /recommendation/${id}
 ```
 
 ```typescript
-interface Get_Catalog{
-  movies: Movie[] // Movie all info document[]
-  books: Book[] // Book all info document[]
-  songs: Song[] // Song all info document[]
+RecommendationModel{
+  id_user: number // User id
+  movies: string[] // Id movies
+  books: string[] // Id books
+  songs: string[] // Id songs
 }
 
 interface Get_Likes{
