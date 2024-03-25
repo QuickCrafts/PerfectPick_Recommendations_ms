@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from models.recommendations import ItemRemovalModel, RecommendationModel, RecommendationUpdateModel
 from config.database import collection_name
-from recommendationModels.movie_recommender import recommend_movies
+from recommendationModels.movie_recommender import get_movie_ids, get_movie_titles, recommend_movies
 from schema.schemas import list_serial
 from bson import ObjectId
 from fastapi import HTTPException
@@ -18,42 +18,6 @@ async def get_recommendation_for_user(id_user: int):
     return recommendation
 
 
-
-
-def get_movie_title_from_json(movie_id):
-    with open("C:/Users/dmriv/Documents/GitHub/PerfectPick_Recommendations_ms/recommendationModels/movies.json") as file:
-        movie_data = json.load(file)
-    
-    for movie in movie_data:
-        if movie["id_movie"] == movie_id:
-            return movie["title"]
-    
-    return None
-
-def get_movie_titles(movie_ids):
-    movie_titles = []
-    for movie_id in movie_ids:
-        movie_title = get_movie_title_from_json(movie_id)
-        movie_titles.append(movie_title)
-    return movie_titles
-
-def get_movie_ids(movie_titles):
-    movie_ids = []
-    for movie_title in movie_titles:
-        movie_id = get_movie_id_from_json(movie_title)
-        movie_ids.append(movie_id)
-    return movie_ids
-
-def get_movie_id_from_json(movie_title):
-    with open("C:/Users/dmriv/Documents/GitHub/PerfectPick_Recommendations_ms/recommendationModels/movies.json") as file:
-        movie_data = json.load(file)
-    
-    for movie in movie_data:
-        if movie["title"] == movie_title:
-            return movie["id_movie"]
-    
-    return None
-
 # POST Request Method to create a new recommendation
 @router.post("/recommendation/")
 async def create_recommendation(recommendation: RecommendationModel):
@@ -65,6 +29,7 @@ async def create_recommendation(recommendation: RecommendationModel):
     existing_recommendation = collection_name.find_one({"id_user": user_id})
 
     movie_titles = get_movie_titles(liked_movie_ids)
+    
     recommended_movies = []
     for title in movie_titles:
         recommended_movies.extend(recommend_movies(title))
