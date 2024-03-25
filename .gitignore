@@ -2,3 +2,6 @@ env/
 .env
 __pycache__/
 .venv/
+
+recommendationModels/tmdb_5000_credits.csv
+recommendationModels/tmdb_5000_movies.csv
