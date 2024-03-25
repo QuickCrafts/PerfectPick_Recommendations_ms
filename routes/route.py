@@ -21,22 +21,18 @@ async def get_recommendation_for_user(id_user: int):
 
 
 def get_movie_title_from_json(movie_id):
-    # Load the movie data from the JSON file
     with open("C:/Users/dmriv/Documents/GitHub/PerfectPick_Recommendations_ms/recommendationModels/movies.json") as file:
         movie_data = json.load(file)
     
-    # Search for the movie with the given ID
     for movie in movie_data:
         if movie["id_movie"] == movie_id:
             return movie["title"]
     
-    # If the movie ID is not found, return None or raise an exception
     return None
 
 def get_movie_titles(movie_ids):
     movie_titles = []
     for movie_id in movie_ids:
-        # Retrieve the movie title based on the movie ID from your JSON file
         movie_title = get_movie_title_from_json(movie_id)
         movie_titles.append(movie_title)
     return movie_titles
@@ -44,41 +40,35 @@ def get_movie_titles(movie_ids):
 def get_movie_ids(movie_titles):
     movie_ids = []
     for movie_title in movie_titles:
-        # Retrieve the movie ID based on the movie title from your JSON file
         movie_id = get_movie_id_from_json(movie_title)
         movie_ids.append(movie_id)
     return movie_ids
 
 def get_movie_id_from_json(movie_title):
-    # Load the movie data from the JSON file
     with open("C:/Users/dmriv/Documents/GitHub/PerfectPick_Recommendations_ms/recommendationModels/movies.json") as file:
         movie_data = json.load(file)
     
-    # Search for the movie with the given title
     for movie in movie_data:
         if movie["title"] == movie_title:
             return movie["id_movie"]
     
-    # If the movie title is not found, return None or raise an exception
     return None
 
 # POST Request Method to create a new recommendation
 @router.post("/recommendation/")
 async def create_recommendation(recommendation: RecommendationModel):
-    print
     user_id = recommendation.id_user
     liked_movie_ids = recommendation.movies
     liked_book_ids = recommendation.books
     liked_song_ids = recommendation.songs
 
-    movie_titles = get_movie_titles(liked_movie_ids)
+    existing_recommendation = collection_name.find_one({"id_user": user_id})
 
+    movie_titles = get_movie_titles(liked_movie_ids)
     recommended_movies = []
     for title in movie_titles:
         recommended_movies.extend(recommend_movies(title))
-
     recommended_movies = list(set(recommended_movies))
-
     recommended_movie_ids = get_movie_ids(recommended_movies)
 
     recommended_book_ids = []
@@ -89,14 +79,17 @@ async def create_recommendation(recommendation: RecommendationModel):
         "movies": recommended_movie_ids,
         "books": recommended_book_ids,
         "songs": recommended_song_ids,
-
     }
 
-    collection_name.insert_one(recommendation_data)
-    return {
-        "data": "recommendation added successfully"
-    }
-
+    if existing_recommendation:
+        collection_name.update_one(
+            {"id_user": user_id},
+            {"$set": recommendation_data}
+        )
+        return {"data": "Recommendation updated successfully"}
+    else:
+        collection_name.insert_one(recommendation_data)
+        return {"data": "Recommendation added successfully"}
 
 # PUT Request Method to update a recommendation for a specific user
 @router.put("/recommendation/{id_user}")
