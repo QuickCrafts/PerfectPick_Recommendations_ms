@@ -36,7 +36,7 @@ def recommend_movies(movie_title, top_n=5):
     similar_movies = [titles[i] for i in similar_indices]
     return similar_movies
 
-movie_title = "Waiting for Forever"
+movie_title = "For Love or Money"
 recommended_movies = recommend_movies(movie_title)
 print(f"Movies similar to '{movie_title}':")
 for movie in recommended_movies:

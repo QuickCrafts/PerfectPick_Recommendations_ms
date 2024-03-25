@@ -3,13 +3,13 @@ from typing import List, Optional
 
 class RecommendationModel(BaseModel):
     id_user: int
-    movies: List[int]  
+    movies: List[str]  
     books: List[int]  
     songs: List[int]
  
 
 class RecommendationUpdateModel(BaseModel):
-    movies: Optional[List[int]] = Field(None)
+    movies: Optional[List[str]] = Field(None)
     books: Optional[List[int]] = Field(None)
     songs: Optional[List[int]] = Field(None)
 
