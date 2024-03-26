@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from models.recommendations import ItemRemovalModel, RecommendationModel, RecommendationUpdateModel
 from config.database import collection_name
+from recommendationModels.book_recommender import get_book_ids, get_book_titles, recommend_books
 from recommendationModels.movie_recommender import get_movie_ids, get_movie_titles, recommend_movies
 from schema.schemas import list_serial
 from bson import ObjectId
@@ -29,14 +30,19 @@ async def create_recommendation(recommendation: RecommendationModel):
     existing_recommendation = collection_name.find_one({"id_user": user_id})
 
     movie_titles = get_movie_titles(liked_movie_ids)
-    
     recommended_movies = []
     for title in movie_titles:
         recommended_movies.extend(recommend_movies(title))
     recommended_movies = list(set(recommended_movies))
     recommended_movie_ids = get_movie_ids(recommended_movies)
 
-    recommended_book_ids = []
+    book_titles = get_book_titles(liked_book_ids)
+    recommended_books = []
+    for title in book_titles:
+        recommended_books.extend(recommend_books(title))
+    recommended_books = list(set(recommended_books))
+    recommended_book_ids = get_book_ids(recommended_books)
+
     recommended_song_ids = []
 
     recommendation_data = {

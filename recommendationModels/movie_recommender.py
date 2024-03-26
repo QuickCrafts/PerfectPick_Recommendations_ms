@@ -54,7 +54,6 @@ def get_movie_title_from_json(movie_id):
     return None
 
 
-
 def get_movie_ids(movie_titles):
     movie_ids = []
     for movie_title in movie_titles:
