@@ -5,13 +5,13 @@ class RecommendationModel(BaseModel):
     id_user: int
     movies: List[str]  
     books: List[str]  
-    songs: List[int]
+    songs: List[str]
  
 
 class RecommendationUpdateModel(BaseModel):
     movies: Optional[List[str]] = Field(None)
     books: Optional[List[str]] = Field(None)
-    songs: Optional[List[int]] = Field(None)
+    songs: Optional[List[str]] = Field(None)
 
 class ItemRemovalModel(BaseModel):
     section: str 

@@ -3,6 +3,7 @@ from models.recommendations import ItemRemovalModel, RecommendationModel, Recomm
 from config.database import collection_name
 from recommendationModels.book_recommender import get_book_ids, get_book_titles, recommend_books
 from recommendationModels.movie_recommender import get_movie_ids, get_movie_titles, recommend_movies
+from recommendationModels.song_recommender import get_song_ids, get_song_titles, recommend_songs
 from schema.schemas import list_serial
 from bson import ObjectId
 from fastapi import HTTPException
@@ -43,7 +44,12 @@ async def create_recommendation(recommendation: RecommendationModel):
     recommended_books = list(set(recommended_books))
     recommended_book_ids = get_book_ids(recommended_books)
 
-    recommended_song_ids = []
+    song_titles = get_song_titles(liked_song_ids)
+    recommended_songs = []
+    for title in song_titles:
+        recommended_songs.extend(recommend_songs(title))
+    recommended_songs = list(set(recommended_songs))
+    recommended_song_ids = get_song_ids(recommended_songs)
 
     recommendation_data = {
         "id_user": user_id,
