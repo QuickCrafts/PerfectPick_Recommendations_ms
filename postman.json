@@ -43,7 +43,8 @@
 							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -52,7 +53,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"id_user\": 245564845,\r\n  \"movies\": [\r\n    1,5,66,45,23,98,56,43,45\r\n  ],\r\n  \"books\": [\r\n    2,44,78,98,54,33,50\r\n  ],\r\n  \"songs\": [\r\n    4,5,88,78,554,342\r\n  ],\r\n  \"created_at\": \"1710030501\"\r\n}",
+					"raw": "{\r\n  \"id_user\": 245564845,\r\n  \"movies\": [\r\n    \"tt0106941\",\"tt0118694\"\r\n  ],\r\n  \"books\": [\r\n    \"AYhxAQHUdCYC\",\"fyPsAAAAMAAJ\"\r\n  ],\r\n  \"songs\": [\r\n    \"3qhlB30KknSejmIvZZLjOD\"\r\n  ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -60,12 +61,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:80/recommendation/",
+					"raw": "http://localhost:8000/recommendation/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "80",
+					"port": "8000",
 					"path": [
 						"recommendation",
 						""
@@ -120,7 +121,8 @@
 							"  });",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -128,12 +130,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:80/recommendation/245564845",
+					"raw": "http://localhost:8000/recommendation/245564845",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "80",
+					"port": "8000",
 					"path": [
 						"recommendation",
 						"245564845"
@@ -180,7 +182,8 @@
 							"  pm.expect(pm.response.headers.get(\"Content-Type\")).to.equal(\"application/json\");",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -189,7 +192,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"movies\": [\r\n    1\r\n  ],\r\n  \"books\": [\r\n    1\r\n  ],\r\n  \"songs\": [\r\n    1\r\n  ],\r\n  \"created_at\": \"string\"\r\n}",
+					"raw": "{\r\n  \"movies\": [\r\n    \"tt1932718\"\r\n  ],\r\n  \"books\": [\r\n    \"zSpSuwEACAAJ\"\r\n  ],\r\n  \"songs\": [\r\n    \"4KULAymBBJcPRpk1yO4dOG\"\r\n  ],\r\n  \"created_at\": \"string\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -197,12 +200,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:80/recommendation/245564845",
+					"raw": "http://localhost:8000/recommendation/245564845",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "80",
+					"port": "8000",
 					"path": [
 						"recommendation",
 						"245564845"
@@ -247,7 +250,8 @@
 							"  pm.expect(pm.response.responseTime).to.be.below(500);",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -256,7 +260,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"section\": \"movies\",\r\n  \"id_to_remove\": 1\r\n}",
+					"raw": "{\r\n  \"section\": \"movies\",\r\n  \"id_to_remove\": \"tt1932718\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -264,12 +268,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:80/recommendation/remove/245564845",
+					"raw": "http://localhost:8000/recommendation/remove/245564845",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "80",
+					"port": "8000",
 					"path": [
 						"recommendation",
 						"remove",
@@ -301,7 +305,8 @@
 							"",
 							""
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -313,12 +318,12 @@
 					"file": {}
 				},
 				"url": {
-					"raw": "http://localhost:80/recommendation/245564845",
+					"raw": "http://localhost:8000/recommendation/245564845",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "80",
+					"port": "8000",
 					"path": [
 						"recommendation",
 						"245564845"
