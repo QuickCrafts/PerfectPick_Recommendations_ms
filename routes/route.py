@@ -8,6 +8,7 @@ from schema.schemas import list_serial
 from bson import ObjectId
 from fastapi import HTTPException
 import json
+from consumer.consumer import test_message
 
 router = APIRouter()
 
@@ -15,6 +16,7 @@ router = APIRouter()
 @router.get("/recommendation/{id_user}")
 async def get_recommendation_for_user(id_user: int):
     recommendation = list_serial(collection_name.find({"id_user": id_user}))
+    #test_message()
     if not recommendation:
         raise HTTPException(status_code=404, detail="Recommendation not found")
     return recommendation

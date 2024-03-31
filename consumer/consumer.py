@@ -20,6 +20,7 @@ def consume_recommendations():
     channel.basic_consume(queue='recommendations', on_message_callback=callback, auto_ack=True)
     print(' [*] Waiting for messages. To exit press CTRL+C')
     channel.start_consuming()
+    
 
 def create_recommendation_from_message(recommendation_data):
     user_id = recommendation_data["id_user"]
@@ -70,7 +71,22 @@ def create_recommendation_from_message(recommendation_data):
         print("Recommendation added successfully")
         print(' [*] Waiting for messages. To exit press CTRL+C')
 
+def test_message():
+    recommendation_data = {
+    "id_user": 245564845,
+    "movies": ["tt0106941", "tt0118694"],
+    "books": ["AYhxAQHUdCYC", "fyPsAAAAMAAJ"],
+    "songs": ["3qhlB30KknSejmIvZZLjOD"]
+    }
+    connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq', 5672))
+    channel = connection.channel()
+    channel.queue_declare(queue='recommendations')
+    message = json.dumps(recommendation_data)
 
+    channel.basic_publish(exchange='', routing_key='recommendations', body=message)
+    print(f" [x] Sent recommendation data: {message}")
+
+    connection.close()
 
 async def startup_event():
     thread = threading.Thread(target=consume_recommendations, daemon=True)
