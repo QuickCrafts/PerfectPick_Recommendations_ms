@@ -3,7 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from unidecode import unidecode
 
-with open('C:/Users/dmriv/Documents/GitHub/PerfectPick_Recommendations_ms/recommendationModels/books.json') as file:
+with open('recommendationModels/books.json') as file:
     book_data = json.load(file)
 
 titles = []

@@ -9,7 +9,7 @@ from config.database import collection_name
 
 
 def consume_recommendations():
-    connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+    connection = pika.BlockingConnection(pika.ConnectionParameters(host='rabbitmq'))
     channel = connection.channel()
     channel.queue_declare(queue='recommendations')
 
@@ -63,9 +63,13 @@ def create_recommendation_from_message(recommendation_data):
             {"$set": recommendation_data}
         )
         print("Recommendation updated successfully")
+        print(' [*] Waiting for messages. To exit press CTRL+C')
+
     else:
         collection_name.insert_one(recommendation_data)
         print("Recommendation added successfully")
+        print(' [*] Waiting for messages. To exit press CTRL+C')
+
 
 
 async def startup_event():

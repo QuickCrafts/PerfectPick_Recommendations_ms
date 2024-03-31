@@ -19,7 +19,7 @@ async def get_recommendation_for_user(id_user: int):
         raise HTTPException(status_code=404, detail="Recommendation not found")
     return recommendation
 
-''' Removed since it will be taken care of by the consumer
+# Removed since it will be taken care of by the consumer
 # POST Request Method to create a new recommendation
 @router.post("/recommendation/")
 async def create_recommendation(recommendation: RecommendationModel):
@@ -67,7 +67,7 @@ async def create_recommendation(recommendation: RecommendationModel):
     else:
         collection_name.insert_one(recommendation_data)
         return {"data": "Recommendation added successfully"}
-'''
+
 
 # PUT Request Method to update a recommendation for a specific user
 @router.put("/recommendation/{id_user}")

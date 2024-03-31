@@ -2,7 +2,7 @@ import json
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-with open('C:/Users/dmriv/Documents/GitHub/PerfectPick_Recommendations_ms/recommendationModels/movies.json') as file:
+with open('recommendationModels/movies.json') as file:
     movie_data = json.load(file)
 
 titles = []
@@ -44,7 +44,7 @@ def get_movie_titles(movie_ids):
     return movie_titles
 
 def get_movie_title_from_json(movie_id):
-    with open("C:/Users/dmriv/Documents/GitHub/PerfectPick_Recommendations_ms/recommendationModels/movies.json") as file:
+    with open("recommendationModels/movies.json") as file:
         movie_data = json.load(file)
     
     for movie in movie_data:
@@ -62,7 +62,7 @@ def get_movie_ids(movie_titles):
     return movie_ids
 
 def get_movie_id_from_json(movie_title):
-    with open("C:/Users/dmriv/Documents/GitHub/PerfectPick_Recommendations_ms/recommendationModels/movies.json") as file:
+    with open("recommendationModels/movies.json") as file:
         movie_data = json.load(file)
     
     for movie in movie_data:

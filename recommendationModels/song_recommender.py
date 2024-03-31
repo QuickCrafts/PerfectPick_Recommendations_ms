@@ -2,7 +2,7 @@ import json
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-with open('C:/Users/dmriv/Documents/GitHub/PerfectPick_Recommendations_ms/recommendationModels/songs.json', encoding='utf-8') as file:
+with open('recommendationModels/songs.json', encoding='utf-8') as file:
     song_data = json.load(file)
 
 titles = []
@@ -39,7 +39,7 @@ def get_song_titles(song_ids):
     return song_titles
 
 def get_song_title_from_json(song_id):
-    with open("C:/Users/dmriv/Documents/GitHub/PerfectPick_Recommendations_ms/recommendationModels/songs.json", encoding='utf-8') as file:
+    with open("recommendationModels/songs.json", encoding='utf-8') as file:
         song_data = json.load(file)
     for song in song_data:
         if song["id_song"] == song_id:
@@ -54,7 +54,7 @@ def get_song_ids(song_titles):
     return song_ids
 
 def get_song_id_from_json(song_title):
-    with open("C:/Users/dmriv/Documents/GitHub/PerfectPick_Recommendations_ms/recommendationModels/songs.json", encoding='utf-8') as file:
+    with open("recommendationModels/songs.json", encoding='utf-8') as file:
         song_data = json.load(file)
     for song in song_data:
         if song["title"] == song_title:
