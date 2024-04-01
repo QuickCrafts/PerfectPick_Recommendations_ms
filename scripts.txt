@@ -23,7 +23,7 @@ pip install -r requirements.txt
 docker pull mongo
 
 #build app on docker image
-docker build -t fastapi-app . 
+docker build -t recommendation-ms . 
 
 #crear docker network
 docker network create mynetwork
@@ -33,7 +33,7 @@ docker network create mynetwork
 docker run -it --rm --name rabbitmq --network mynetwork -p 5672:5672 -p 15672:15672 rabbitmq:3.13-management
 
 #run app on docker container on mynetwork
-docker run -d --name myfastapi --network mynetwork -p 80:80 fastapi-app 
+docker run -d --name recommendationms --network mynetwork -p 8000:8000 recommendation-ms
 
 #run mongodb on mynetwork, create volume for data persistance
-docker run -d --name mymongo --network mynetwork -v mongodbdata:/data/db mongo
+docker run -d --name mongo --network mynetwork -p 27017:27017 -v mongodbdata:/data/db mongo

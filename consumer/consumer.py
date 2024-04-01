@@ -78,7 +78,7 @@ def test_message():
     "books": ["AYhxAQHUdCYC", "fyPsAAAAMAAJ"],
     "songs": ["3qhlB30KknSejmIvZZLjOD"]
     }
-    connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq', 5672))
+    connection = pika.BlockingConnection(pika.ConnectionParameters(host='rabbitmq'))
     channel = connection.channel()
     channel.queue_declare(queue='recommendations')
     message = json.dumps(recommendation_data)
