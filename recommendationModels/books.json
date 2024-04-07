@@ -6,34 +6,25 @@
         "pages": 120,
         "rating": null,
         "title": "Crónica de la fotografía en Colombia, 1841-1948",
-        "year": 1982
+        "year": 1983
     },
     {
-        "id_book": "9vgyAAAAMAAJ",
-        "author": "Juan García Ponce",
-        "genres": "Mexican literature",
-        "pages": 560,
-        "rating": null,
-        "title": "Crónica de la intervención",
-        "year": 1981
-    },
-    {
-        "id_book": "5QswPQAACAAJ",
-        "author": "Plaza & Janes Editories, S.A.",
+        "id_book": "o5U5mwEACAAJ",
+        "author": "Juan Manuel",
         "genres": null,
-        "pages": 288,
+        "pages": 256,
         "rating": null,
-        "title": "Crónica de la humanidad",
-        "year": 1989
+        "title": "Cronica Abreviada",
+        "year": 2013
     },
     {
-        "id_book": "yImzmgEACAAJ",
-        "author": null,
+        "id_book": "UfPIrXPoyR0C",
+        "author": "Florián de Ocampo",
         "genres": null,
-        "pages": null,
+        "pages": 706,
         "rating": null,
-        "title": "Crónica del siglo XX",
-        "year": 2000
+        "title": "Los cinco libros primeros de la Cronica general de España",
+        "year": 1553
     },
     {
         "id_book": "HdYj2RqeGnoC",
@@ -43,15 +34,6 @@
         "rating": null,
         "title": "Antología de crónica latinoamericana actual",
         "year": 2012
-    },
-    {
-        "id_book": "c7SlPwAACAAJ",
-        "author": "Rosa Montero",
-        "genres": "Spain",
-        "pages": 260,
-        "rating": null,
-        "title": "Crónica del desamor",
-        "year": 1998
     },
     {
         "id_book": "shKIEAAAQBAJ",
@@ -69,7 +51,16 @@
         "pages": 411,
         "rating": null,
         "title": "Crónica",
-        "year": 2009
+        "year": 2010
+    },
+    {
+        "id_book": "2RNRebUMtZwC",
+        "author": "Lucio Marineo",
+        "genres": null,
+        "pages": 152,
+        "rating": null,
+        "title": "Cronica Daragon [",
+        "year": 1524
     },
     {
         "id_book": "wqHeAAAACAAJ",
@@ -81,13 +72,40 @@
         "year": 1990
     },
     {
+        "id_book": "r89sAAAAMAAJ",
+        "author": "Aníbal Noguera Mendoza",
+        "genres": "Colombia",
+        "pages": 542,
+        "rating": null,
+        "title": "Crónica grande del Río de la Magdalena",
+        "year": 1980
+    },
+    {
         "id_book": "2UtTAAAAMAAJ",
         "author": "Luis Tejada",
         "genres": null,
         "pages": 186,
         "rating": null,
         "title": "Libro de crónicas",
-        "year": 1960
+        "year": 1961
+    },
+    {
+        "id_book": "e9KcDwAAQBAJ",
+        "author": "Sala Negra de El Faro",
+        "genres": "Social Science",
+        "pages": 550,
+        "rating": null,
+        "title": "Crónicas desde la región más violenta",
+        "year": 2019
+    },
+    {
+        "id_book": "SkW8AAAAIAAJ",
+        "author": "Ricardo Aricapa Ardila",
+        "genres": "History",
+        "pages": 272,
+        "rating": null,
+        "title": "Comuna 13",
+        "year": 2005
     },
     {
         "id_book": "LfYgOwAACAAJ",
@@ -96,16 +114,16 @@
         "pages": 252,
         "rating": null,
         "title": "Va a arder París--?",
-        "year": 2007
+        "year": 2008
     },
     {
-        "id_book": "7L-5VO_kwWAC",
-        "author": "Clarice Lispector",
+        "id_book": "i0UAA5aV-4oC",
+        "author": "Rosa Montero",
         "genres": "Fiction",
-        "pages": 228,
+        "pages": 185,
         "rating": null,
-        "title": "Selected Cronicas",
-        "year": 1995
+        "title": "Crónica del desamor",
+        "year": 2012
     },
     {
         "id_book": "lUteAAAAcAAJ",
@@ -114,7 +132,7 @@
         "pages": 252,
         "rating": null,
         "title": "La crónica modernista hispanoamericana",
-        "year": 1982
+        "year": 1983
     },
     {
         "id_book": "oY96AAAAMAAJ",
@@ -123,7 +141,7 @@
         "pages": 514,
         "rating": null,
         "title": "Lecturas y ediciones de crónicas de Indias",
-        "year": 2003
+        "year": 2004
     },
     {
         "id_book": "948RmsRxGxYC",
@@ -132,7 +150,7 @@
         "pages": 365,
         "rating": null,
         "title": "Memorias incompletas",
-        "year": 2006
+        "year": 2007
     },
     {
         "id_book": "fC5XPQAACAAJ",
@@ -141,70 +159,34 @@
         "pages": 1455,
         "rating": null,
         "title": "Crónica del Siglo XX",
-        "year": 1991
+        "year": 1992
     },
     {
-        "id_book": "4_FcmwEACAAJ",
-        "author": "Juan Manuel",
+        "id_book": "ZECKzQEACAAJ",
+        "author": "Enrique Posada Restrepo",
         "genres": null,
-        "pages": 256,
+        "pages": 252,
         "rating": null,
-        "title": "Cronica Abreviada",
-        "year": 2013
+        "title": "Las Quebradas de Medellín",
+        "year": 2020
     },
     {
-        "id_book": "Fn1pAAAAIAAJ",
-        "author": "Carlos Lleras Restrepo",
-        "genres": "Colombia",
-        "pages": 504,
+        "id_book": "gTHmAAAAMAAJ",
+        "author": "Juan García Ponce",
+        "genres": "Mexican literature",
+        "pages": 556,
         "rating": null,
-        "title": "Crónica de mi propia vida",
+        "title": "Crónica de la intervención",
         "year": 1982
     },
     {
-        "id_book": "J15UAAAACAAJ",
-        "author": "Bayer, Plaza & Janes Editories, S.A.",
-        "genres": null,
-        "pages": 162,
+        "id_book": "Zx51AAAAMAAJ",
+        "author": "Simón Valcárcel Martínez",
+        "genres": "America",
+        "pages": 556,
         "rating": null,
-        "title": "Cronica de la medicina T.1",
-        "year": 1993
-    },
-    {
-        "id_book": "EmRYAAAAcAAJ",
-        "author": "Jean Joinville (sire de)",
-        "genres": "France",
-        "pages": 506,
-        "rating": null,
-        "title": "Cronica de San Luis, rey de Francia ...",
-        "year": 1793
-    },
-    {
-        "id_book": "J-9eAAAAMAAJ",
-        "author": "Heriberto Fiorillo",
-        "genres": "Authors, Colombian",
-        "pages": 296,
-        "rating": "5",
-        "title": "La Cueva",
-        "year": 2001
-    },
-    {
-        "id_book": "Fqd6AAAAMAAJ",
-        "author": "Carmelo Sáenz de Santa María",
-        "genres": "Guatemala",
-        "pages": 256,
-        "rating": null,
-        "title": "Historia de una historia",
-        "year": 1983
-    },
-    {
-        "id_book": "EkkYAAAAYAAJ",
-        "author": "Aníbal Noguera Mendoza",
-        "genres": "Colombia",
-        "pages": 544,
-        "rating": null,
-        "title": "Crónica grande del Río de la Magdalena",
-        "year": 1979
+        "title": "Las crónicas de Indias como expresión y configuración de la mentalidad renacentista",
+        "year": 1997
     },
     {
         "id_book": "E0stAAAAYAAJ",
@@ -213,7 +195,7 @@
         "pages": 204,
         "rating": null,
         "title": "Crónica anacrónica",
-        "year": 2002
+        "year": 2003
     },
     {
         "id_book": "n1ZkbkpI4N4C",
@@ -222,7 +204,16 @@
         "pages": 174,
         "rating": null,
         "title": "Crónica de los pastos",
-        "year": 2003
+        "year": 2004
+    },
+    {
+        "id_book": "w6_oAAAAMAAJ",
+        "author": "Heriberto Fiorillo",
+        "genres": "Artists",
+        "pages": 384,
+        "rating": null,
+        "title": "La Cueva",
+        "year": 2002
     },
     {
         "id_book": "ItYSAQAAIAAJ",
@@ -231,16 +222,25 @@
         "pages": 454,
         "rating": null,
         "title": "Crónica del día",
-        "year": 2002
+        "year": 2003
     },
     {
-        "id_book": "hRCtDwAAQBAJ",
-        "author": "Pedro Cieza de León",
-        "genres": "Political Science",
-        "pages": 254,
+        "id_book": "RSQ2AAAAIAAJ",
+        "author": "Germán Santamaría",
+        "genres": null,
+        "pages": 354,
         "rating": null,
-        "title": "Crónica del Perú",
-        "year": 2013
+        "title": "Crónicas",
+        "year": 1981
+    },
+    {
+        "id_book": "F-0QEAAAQBAJ",
+        "author": "Javier Franco Altamar",
+        "genres": "Language Arts & Disciplines",
+        "pages": 231,
+        "rating": null,
+        "title": "El camino de la crónica",
+        "year": 2020
     },
     {
         "id_book": "kbpFAAAAcAAJ",
@@ -249,7 +249,16 @@
         "pages": 700,
         "rating": null,
         "title": "Los Çinco Libros Primeros dela Cronica general de España",
-        "year": 1552
+        "year": 1553
+    },
+    {
+        "id_book": "x7ouAAAAYAAJ",
+        "author": "Mary Luz Vallejo Mejía",
+        "genres": "Press",
+        "pages": 456,
+        "rating": null,
+        "title": "A plomo herido",
+        "year": 2006
     },
     {
         "id_book": "rC91MwEACAAJ",
@@ -258,7 +267,7 @@
         "pages": null,
         "rating": null,
         "title": "Cronica de la medicina",
-        "year": 1992
+        "year": 1993
     },
     {
         "id_book": "Pjs48djLX7MC",
@@ -267,25 +276,7 @@
         "pages": 127,
         "rating": "5",
         "title": "La isla de Morgan ; una crónica desde Las Cuevas de Medellin",
-        "year": 2004
-    },
-    {
-        "id_book": "as0qAQAAIAAJ",
-        "author": "Mauricio Díaz Gómez, Alejandro Villegas Oyola",
-        "genres": "Authors, Colombian",
-        "pages": 242,
-        "rating": null,
-        "title": "Entre la tinta y la sangre",
-        "year": 2007
-    },
-    {
-        "id_book": "bQ8_ckZEYDkC",
-        "author": "Gabriel Garca̕ Mr̀quez",
-        "genres": null,
-        "pages": 112,
-        "rating": "4",
-        "title": "Cronica de una muerte anunciada - Tapa dura",
-        "year": 2004
+        "year": 2005
     },
     {
         "id_book": "xzJjBgAAQBAJ",
@@ -303,7 +294,7 @@
         "pages": 564,
         "rating": null,
         "title": "A ustedes les consta",
-        "year": 2005
+        "year": 2006
     },
     {
         "id_book": "AYhxAQHUdCYC",
@@ -312,7 +303,16 @@
         "pages": 444,
         "rating": null,
         "title": "Vocabulario de indigenismos en las Crónicas de Indias",
-        "year": 1996
+        "year": 1997
+    },
+    {
+        "id_book": "2Lc0AAAACAAJ",
+        "author": "Plaza & Janés Editories, S.A.",
+        "genres": null,
+        "pages": 2192,
+        "rating": null,
+        "title": "Cronica de la Humanidad",
+        "year": 1990
     },
     {
         "id_book": "fyPsAAAAMAAJ",
@@ -321,7 +321,7 @@
         "pages": 422,
         "rating": null,
         "title": "Crónica municipal: Medellín",
-        "year": 1965
+        "year": 1966
     },
     {
         "id_book": "zSpSuwEACAAJ",
@@ -330,7 +330,7 @@
         "pages": 219,
         "rating": null,
         "title": "Colombia crónica",
-        "year": 2012
+        "year": 2013
     },
     {
         "id_book": "n0JIAAAAYAAJ",
@@ -339,7 +339,7 @@
         "pages": 220,
         "rating": null,
         "title": "La invención de la crónica",
-        "year": 1991
+        "year": 1992
     },
     {
         "id_book": "kCKaAAAAIAAJ",
@@ -348,15 +348,15 @@
         "pages": 268,
         "rating": null,
         "title": "Gabriel García Márquez",
-        "year": 2005
+        "year": 2006
     },
     {
-        "id_book": "NwouAAAAIAAJ",
-        "author": "Carlos Alfaro",
-        "genres": null,
-        "pages": 144,
+        "id_book": "NUgYAAAAYAAJ",
+        "author": "Carlos Lleras Restrepo",
+        "genres": "Colombia",
+        "pages": 504,
         "rating": null,
-        "title": "Crónica sobre César",
-        "year": 1979
+        "title": "Crónica de mi propia vida",
+        "year": 1983
     }
 ]

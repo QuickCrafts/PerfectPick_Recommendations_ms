@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: rabbitmq
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - perfectpicknetwork
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodbdata:/data/db
+    networks:
+      - perfectpicknetwork
+
+  recommendationms:
+    build: 
+      context: ./Perfectpick_Recommendations_ms
+      dockerfile: Dockerfile
+    container_name: recommendationms
+    ports:
+      - 8000:8000
+    depends_on:
+      - rabbitmq
+      - mongo
+    networks:
+      - perfectpicknetwork
+
+networks:
+    perfectpicknetwork:
+      external: true
+
+volumes:
+  mongodbdata:

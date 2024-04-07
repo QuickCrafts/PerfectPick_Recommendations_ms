@@ -1,14 +1,5 @@
 [
     {
-        "id_song": "5RqSsdzTNPX1uzkmlHCFvK",
-        "album": "MAÑANA SERÁ BONITO (BICHOTA SEASON)",
-        "artist": "KAROL G, Peso Pluma",
-        "duration": 173,
-        "genres": null,
-        "title": "QLONA",
-        "year": 2023
-    },
-    {
         "id_song": "7iUtQNMRB8ZkKC4AmEuCJC",
         "album": "LVEU: VIVE LA TUYA...NO LA MIA",
         "artist": "Myke Towers",
@@ -72,6 +63,24 @@
         "year": 2024
     },
     {
+        "id_song": "2uqYupMHANxnwgeiXTZXzd",
+        "album": "What Happens Now?",
+        "artist": "Dasha",
+        "duration": 172,
+        "genres": null,
+        "title": "Austin",
+        "year": 2024
+    },
+    {
+        "id_song": "0AjmK0Eai4zGrLaJwPvrDp",
+        "album": "Unreal Unearth: Unheard",
+        "artist": "Hozier",
+        "duration": 251,
+        "genres": null,
+        "title": "Too Sweet",
+        "year": 2024
+    },
+    {
         "id_song": "7MXVkk9YMctZqd1Srtv4MB",
         "album": "Starboy",
         "artist": "The Weeknd, Daft Punk",
@@ -108,6 +117,15 @@
         "year": 2023
     },
     {
+        "id_song": "57wp7VFnV8X0pSVnYArGeJ",
+        "album": "Whatever She Wants",
+        "artist": "Bryson Tiller",
+        "duration": 161,
+        "genres": null,
+        "title": "Whatever She Wants",
+        "year": 2024
+    },
+    {
         "id_song": "7bywjHOc0wSjGGbj04XbVi",
         "album": "FERXXOCALIPSIS",
         "artist": "Feid, ATL Jacob",
@@ -115,6 +133,15 @@
         "genres": null,
         "title": "LUNA",
         "year": 2023
+    },
+    {
+        "id_song": "7EWtB4NKYY3NqBl31PVip9",
+        "album": "LA PEOPLE II",
+        "artist": "Peso Pluma, Tito Double P, Joel De La P",
+        "duration": 141,
+        "genres": null,
+        "title": "LA PEOPLE II",
+        "year": 2024
     },
     {
         "id_song": "3rUGC1vUpkDG9CZFHMur1t",
@@ -144,12 +171,12 @@
         "year": 2024
     },
     {
-        "id_song": "1pnDvUuAEd6z8bKEsbAjk1",
-        "album": "WE DON'T TRUST YOU",
-        "artist": "Future, Metro Boomin",
-        "duration": 226,
+        "id_song": "7wLShogStyDeZvL0a6daN5",
+        "album": "COWBOY CARTER",
+        "artist": "Beyoncé",
+        "duration": 233,
         "genres": null,
-        "title": "We Don't Trust You",
+        "title": "TEXAS HOLD 'EM",
         "year": 2024
     },
     {
@@ -159,6 +186,15 @@
         "duration": 180,
         "genres": null,
         "title": "Beautiful Things",
+        "year": 2024
+    },
+    {
+        "id_song": "1aKvZDoLGkNMxoRYgkckZG",
+        "album": "SUPER REAL ME",
+        "artist": "ILLIT",
+        "duration": 161,
+        "genres": null,
+        "title": "Magnetic",
         "year": 2024
     },
     {
@@ -198,12 +234,12 @@
         "year": 2024
     },
     {
-        "id_song": "4IadxL6BUymXlh8RCJJu7T",
-        "album": "Unheard",
-        "artist": "Hozier",
-        "duration": 251,
+        "id_song": "6zuPQl2RVqQ4y5nAH61CFC",
+        "album": "COWBOY CARTER",
+        "artist": "Beyoncé, Miley Cyrus",
+        "duration": 209,
         "genres": null,
-        "title": "Too Sweet",
+        "title": "II MOST WANTED",
         "year": 2024
     },
     {
@@ -214,15 +250,6 @@
         "genres": null,
         "title": "Gata Only",
         "year": 2024
-    },
-    {
-        "id_song": "3h5TiWTqGxjSjFrbruPFH9",
-        "album": "Praise Jah In The Moonlight",
-        "artist": "YG Marley",
-        "duration": 263,
-        "genres": null,
-        "title": "Praise Jah In The Moonlight",
-        "year": 2023
     },
     {
         "id_song": "2HRgqmZQC0MC7GeNuDIXHN",
@@ -288,15 +315,6 @@
         "year": 2023
     },
     {
-        "id_song": "1kuGVB7EU95pJObxwvfwKS",
-        "album": "GUTS",
-        "artist": "Olivia Rodrigo",
-        "duration": 220,
-        "genres": null,
-        "title": "vampire",
-        "year": 2023
-    },
-    {
         "id_song": "2GxrNKugF82CnoRFbQfzPf",
         "album": "i like the way you kiss me",
         "artist": "Artemas",
@@ -306,15 +324,6 @@
         "year": 2024
     },
     {
-        "id_song": "6wf7Yu7cxBSPrRlWeSeK0Q",
-        "album": "What Was I Made For? [From The Motion Picture \"Barbie\"]",
-        "artist": "Billie Eilish",
-        "duration": 222,
-        "genres": null,
-        "title": "What Was I Made For? [From The Motion Picture \"Barbie\"]",
-        "year": 2023
-    },
-    {
         "id_song": "52eIcoLUM25zbQupAZYoFh",
         "album": "american dream",
         "artist": "21 Savage",
@@ -322,15 +331,6 @@
         "genres": null,
         "title": "redrum",
         "year": 2024
-    },
-    {
-        "id_song": "5XVdHRf4CAJ2Jm0uMIy5qY",
-        "album": "La Víctima",
-        "artist": "Xavi",
-        "duration": 156,
-        "genres": null,
-        "title": "La Víctima",
-        "year": 2023
     },
     {
         "id_song": "0R6NfOiLzLj4O5VbYSJAjf",
@@ -357,15 +357,6 @@
         "duration": 209,
         "genres": null,
         "title": "Training Season",
-        "year": 2024
-    },
-    {
-        "id_song": "7AYmToZ5y67fBjq4RLFbuq",
-        "album": "TEXAS HOLD 'EM",
-        "artist": "Beyoncé",
-        "duration": 236,
-        "genres": null,
-        "title": "TEXAS HOLD 'EM",
         "year": 2024
     },
     {
@@ -414,15 +405,6 @@
         "year": 2023
     },
     {
-        "id_song": "3OxL6MuctgZp1e0zxoAZhH",
-        "album": "WE DON'T TRUST YOU",
-        "artist": "Future, Metro Boomin, The Weeknd",
-        "duration": 205,
-        "genres": null,
-        "title": "Young Metro",
-        "year": 2024
-    },
-    {
         "id_song": "0QZ5yyl6B6utIWkxeBDxQN",
         "album": "Strange Trails",
         "artist": "Lord Huron",
@@ -441,6 +423,15 @@
         "year": 2019
     },
     {
+        "id_song": "1VxEaXbIq3xAvqh80xP67w",
+        "album": "COWBOY CARTER",
+        "artist": "Beyoncé",
+        "duration": 190,
+        "genres": null,
+        "title": "JOLENE",
+        "year": 2024
+    },
+    {
         "id_song": "4KULAymBBJcPRpk1yO4dOG",
         "album": "Zach Bryan",
         "artist": "Zach Bryan, Kacey Musgraves",
@@ -448,5 +439,14 @@
         "genres": null,
         "title": "I Remember Everything (feat. Kacey Musgraves)",
         "year": 2023
+    },
+    {
+        "id_song": "6Y4rniIxibegzsg8cdWAWV",
+        "album": "COWBOY CARTER",
+        "artist": "Beyoncé",
+        "duration": 240,
+        "genres": null,
+        "title": "BODYGUARD",
+        "year": 2024
     }
 ]
